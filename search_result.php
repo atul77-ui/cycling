@@ -16,7 +16,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 </head>
 
 <body>
-    <a href=".">Back to index</a>
+    <a href="search_form.php">Back to search</a>
     <?php
     include 'dbconnect.php';
 

@@ -16,7 +16,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 </head>
 
 <body>
-    <a href=".">Back to index</a>
+    <a href="admin_menu.php">Back to menu</a>
     <h1>Search for participants or clubs</h1>
 
     <h2>Search for an individual participant</h2>

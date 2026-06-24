@@ -17,7 +17,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 <body>
     <h1>View all of the participants for edit or delete</h1>
-    <a href=".">Back to index</a>
+    <a href="admin_menu.php">Back to menu</a>
     <?php
     include 'dbconnect.php';
 
