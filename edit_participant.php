@@ -36,9 +36,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             } else {
                 $stmt = $conn->prepare(
                     "UPDATE participant
-                 SET power_output = :power_output,
-                     distance = :distance
-                 WHERE id = :id"
+                    SET power_output = :power_output,
+                    distance = :distance
+                    WHERE id = :id"
                 );
                 $stmt->bindParam(':power_output', $power_output);
                 $stmt->bindParam(':distance', $distance);

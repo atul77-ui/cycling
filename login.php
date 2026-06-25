@@ -32,9 +32,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
             $stmt = $conn->prepare(
                 "SELECT * FROM user
-             WHERE username = :username
-             AND password = :password
-             LIMIT 1"
+                WHERE username = :username
+                AND password = :password
+                LIMIT 1"
             );
             $stmt->bindParam(':username', $inputUsername);
             $stmt->bindParam(':password', $inputPassword);
