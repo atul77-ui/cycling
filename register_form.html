@@ -4,25 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register your interest</title>
+    <title>Register Interest | Cit-E</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
-<body>
-    <a href=".">Back to index</a>
-    <h1>Register your interest for future events</h1>
-    <form action="register.php" method="POST">
-        <p>Firstname</p>
-        <input type="text" name="firstname"><br>
-        <p>Surname</p>
-        <input type="text" name="surname"><br>
-        <p>Email</p>
-        <input type="text" name="email"><br>
-        <p>Do you accept the terms and conditions?</p>
-        <input type="checkbox" name="terms" value="yes"><br><br>
-        <input type = "Submit">
-
-    </form>
+<body class="bg-base bg-register d-flex flex-column min-vh-100">
     
-</body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent pt-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/logo.png" alt="Cit-E Logo">
+                Cit-E Cycling
+            </a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i> Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container d-flex flex-grow-1 align-items-center justify-content-center my-4">
+        <div class="glass-card p-5 w-100" style="max-width: 500px;">
+            <a href="index.html" class="text-white text-decoration-none mb-3 d-inline-block">
+                <i class="fa-solid fa-arrow-left me-1"></i> Back
+            </a>
+            <h2 class="mb-4 fw-bold text-white">Register Interest</h2>
+            
+            <form action="register.php" method="POST">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label text-white"><i class="fa-regular fa-user me-1"></i> First Name</label>
+                    <input type="text" class="form-control glass-input" id="firstname" name="firstname" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="surname" class="form-label text-white"><i class="fa-regular fa-user me-1"></i> Surname</label>
+                    <input type="text" class="form-control glass-input" id="surname" name="surname" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label text-white"><i class="fa-regular fa-envelope me-1"></i> Email</label>
+                    <input type="email" class="form-control glass-input" id="email" name="email" required>
+                </div>
+                
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input glass-input" id="terms" name="terms" value="yes" required>
+                    <label class="form-check-label text-white" for="terms">I accept the terms and conditions</label>
+                </div>
+                
+                <button type="submit" class="btn btn-cyan-primary w-100 fw-bold py-2">
+                    Submit Registration <i class="fa-solid fa-paper-plane ms-1"></i>
+                </button>
+            </form>
+        </div>
+    </main>
+
 </html>

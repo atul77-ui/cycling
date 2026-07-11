@@ -1,22 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register your interest</title>
+    <title>Cit-E Cycling Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
+<body class="bg-base bg-home d-flex flex-column min-vh-100">
 
-<body>
+    <nav class="navbar navbar-dark bg-transparent pt-3 sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="assets/logo.png" alt="Cit-E Logo"> Cit-E Cycling
+            </a>
+            <span class="text-white fw-bold opacity-75">
+                City Cycling UK
+            </span>
+        </div>
+    </nav>
 
-    <h1>Cit-E Cycling web portal</h1>
-    <ul>
-        <li><a href="register_form.html">Register your interest for future events</a></li>
-        <li><a href="admin_login.html">Admin login</a></li>
+    <main class="container flex-grow-1 d-flex flex-column align-items-center justify-content-center py-5">
+        
+        <div class="text-center mb-5 w-100">
+            <h1 class="display-4 fw-bold text-white mb-3">Welcome to Cit-E Cycling</h1>
+            <p class="lead text-white-50">Choose your destination to get started with the tournament.</p>
+        </div>
+        
+        <div class="row w-100 justify-content-center gap-4 mb-5">
+            <div class="col-md-5 col-lg-4 glass-card p-5 text-center d-flex flex-column align-items-center card-hover">
+                <div class="mb-4 text-white">
+                    <i class="fa-solid fa-users fa-4x opacity-75"></i>
+                </div>
+                <h3 class="fw-bold mb-3 text-white">Join the Event</h3>
+                <p class="text-light mb-4 flex-grow-1">New to Cit-E? Register your interest to participate in the upcoming cycling tournaments as an individual or a club.</p>
+                <a href="register_form.html" class="btn btn-white-outline btn-lg w-100 fw-bold">
+                    <i class="fa-solid fa-pen-to-square me-2"></i> Register Now
+                </a>
+            </div>
 
-    </ul>
+            <div class="col-md-5 col-lg-4 glass-card p-5 text-center d-flex flex-column align-items-center card-hover">
+                <div class="mb-4 text-white">
+                    <i class="fa-solid fa-user-shield fa-4x opacity-75"></i>
+                </div>
+                <h3 class="fw-bold mb-3 text-white">Admin Portal</h3>
+                <p class="text-light mb-4 flex-grow-1">Authorized personnel only. Login to safely manage tournament data, search participants, and update scores.</p>
+                <a href="admin_login.html" class="btn btn-cyan-primary btn-lg w-100 fw-bold">
+                    <i class="fa-solid fa-right-to-bracket me-2"></i> Admin Login
+                </a>
+            </div>
+        </div>
+
+        <div class="row w-100 justify-content-center mt-4">
+            <div class="col-12 text-center mb-4">
+                <h2 class="fw-bold text-white">Tournament Information</h2>
+                <hr class="text-white w-25 mx-auto border-2">
+            </div>
+
+            <div class="col-md-4 mb-4 scroll-anim-card">
+                <div class="glass-card p-4 h-100 text-center card-hover">
+                    <i class="fa-solid fa-map-location-dot fa-2x text-warning mb-3 anim-icon"></i>
+                    <h5 class="fw-bold text-white anim-title">10 Locations</h5>
+                    <p class="text-light small mb-0 anim-desc" data-text="There will be 10 Mini pop tournaments across the city in different locations. Every tournament lasts for 3 days."></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 scroll-anim-card">
+                <div class="glass-card p-4 h-100 text-center card-hover">
+                    <i class="fa-solid fa-bicycle fa-2x text-info mb-3 anim-icon"></i>
+                    <h5 class="fw-bold text-white anim-title">High-Tech Gear</h5>
+                    <p class="text-light small mb-0 anim-desc" data-text="The tournament features 20 high-tech exercise bikes capable of accurately counting miles and power output."></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4 scroll-anim-card">
+                <div class="glass-card p-4 h-100 text-center card-hover">
+                    <i class="fa-solid fa-trophy fa-2x text-success mb-3 anim-icon"></i>
+                    <h5 class="fw-bold text-white anim-title">Prizes to be Won</h5>
+                    <p class="text-light small mb-0 anim-desc" data-text="Prize distributions are split across 3 categories: Gender, Age groups, and the Best Performing Club."></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll('.scroll-anim-card');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        triggerCardAnimation(entry.target);
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.3 }); 
+
+            cards.forEach(card => observer.observe(card));
+
+            function triggerCardAnimation(card) {
+                const icon = card.querySelector('.anim-icon');
+                const title = card.querySelector('.anim-title');
+                const desc = card.querySelector('.anim-desc');
+                const textToType = desc.getAttribute('data-text');
+                
+                icon.classList.add('is-visible');
+                
+                setTimeout(() => {
+                    title.classList.add('is-visible');
+                }, 400);
+                
+                setTimeout(() => {
+                    desc.classList.add('typing-cursor');
+                    typeText(desc, textToType, 0);
+                }, 800);
+            }
+
+            function typeText(element, text, index) {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    setTimeout(() => {
+                        typeText(element, text, index + 1);
+                    }, 25); 
+                } else {
+                    setTimeout(() => element.classList.remove('typing-cursor'), 2000);
+                }
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

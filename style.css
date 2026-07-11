@@ -1,0 +1,629 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Base Background Settings --- */
+.bg-base {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-color: #121212; 
+}
+
+/* --- Specific Page Backgrounds --- */
+.bg-home {
+    background-image: url('assets/cycle.jpg'); 
+}
+
+.bg-register {
+    background-image: url('assets/race.jpg');
+}
+
+.bg-admin {
+    background-image: url('assets/admin.jpg'); 
+}
+
+.bg-admin-menu {
+    background-image: url('assets/cycle.jpg'); 
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-input {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.glass-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25) !important;
+    border-color: #ffffff !important;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Navbar Logo sizing */
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Smooth Hover Effect for Index Cards */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-cyan-primary {
+    background-color: #00d2ff; 
+    color: #000000; 
+    border: none;
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.btn-cyan-primary:hover,
+.btn-cyan-primary:focus {
+    background-color: #33dbff; /* Slightly lighter on hover */
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+}
+
+/* Clean White Outline Button */
+.btn-white-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-white-outline:hover,
+.btn-white-outline:focus {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* --- Logo Hover Effect --- */
+.navbar-brand {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-4px); /* Moves the logo slightly upward */
+    opacity: 0.9; 
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+/* --- Navbar Logout Button Hover Animation --- */
+.navbar-nav .nav-link.text-danger {
+    transition: all 0.3s ease-in-out !important;
+    display: inline-block !important; 
+}
+
+.navbar-nav .nav-link.text-danger:hover {
+    transform: translateY(-3px) !important; 
+    color: #ff6b6b !important; 
+    text-shadow: 0 0 15px rgba(255, 107, 107, 0.8) !important; 
+}
+
+/* --- Scroll Animation Initial States --- */
+.anim-icon, .anim-title {
+    opacity: 0;
+    transform: translateY(15px); /* Starts slightly lower */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.anim-icon.is-visible, .anim-title.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typewriter Blinking Cursor */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+    opacity: 1;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- Registration Status PHP Output Styling --- */
+.status-message p {
+    font-size: 1.15rem;
+    color: #e0e0e0; /* Off-white for premium look */
+    margin-bottom: 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* --- Custom Glass Card Opacity for Register Page --- */
+.bg-register .glass-card {
+    background-color: rgba(20, 20, 20, 0.35) !important; 
+    backdrop-filter: blur(15px) !important; 
+}
+
+/* --- Login Error PHP Output Styling --- */
+.status-message {
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.status-message p {
+    margin-bottom: 1.5rem;
+}
+
+.status-message a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2.5rem;
+    background: linear-gradient(135deg, #00d4ff 0%, #007bb5 100%);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-message a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+/* --- Admin Sidebar Styling --- */
+.glass-sidebar {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Nav Link Transitions */
+.sidebar-nav .nav-link {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    color: #e0e0e0;
+}
+
+/* Sidebar Hover Effect */
+.sidebar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+    color: #ffffff !important;
+}
+
+.sidebar-nav .nav-link.active {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 123, 181, 0.15) 100%);
+    color: #00d4ff !important;
+    border-left: 4px solid #00d4ff;
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+}
+
+
+@keyframes slideInLeft {
+    0% { 
+        opacity: 0; 
+        transform: translateX(-50px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes fadeInUp {
+    0% { 
+        opacity: 0; 
+        transform: translateY(40px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Apply the Slide animation to the Sidebar */
+.bg-admin-menu .glass-sidebar {
+    animation: slideInLeft 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Apply the Fade Up animation to the Main Content area */
+.bg-admin-menu main {
+    opacity: 0; /* Keeps it hidden until the animation starts */
+    animation: fadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards; 
+}
+
+.bg-admin-menu .glass-card .btn {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+.bg-admin-menu .glass-card .btn:nth-child(1) { animation-delay: 0.4s; }
+.bg-admin-menu .glass-card .btn:nth-child(2) { animation-delay: 0.55s; }
+.bg-admin-menu .glass-card .btn:nth-child(3) { animation-delay: 0.7s; }
+
+/* --- Sidebar Logo Styling --- */
+.sidebar-logo {
+    height: 35px; 
+    width: auto;  
+    object-fit: contain;
+}
+
+body.bg-admin-menu {
+    background-color: transparent !important;
+    background-image: none !important; /* Prevents conflicts with old image rules */
+}
+
+body.bg-admin-menu::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url('assets/cycle.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    
+    /* The Animation */
+    animation: zoomToFrontWheel 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* The Keyframes */
+@keyframes zoomToFrontWheel {
+    0% {
+        transform: scale(1);
+        transform-origin: center center;
+    }
+    100% {
+        transform: scale(1.4);
+        transform-origin: 80% 30%; 
+    }
+}
+
+/* --- Glassmorphism Form Inputs --- */
+.glass-input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-color: #00d4ff !important;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.glass-input option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+body.bg-admin-search {
+    background-color: transparent !important;
+    background-image: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+body.bg-admin-search::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url('assets/cycle.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    
+    animation: slideToBody 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* The Continuous Motion Keyframes */
+@keyframes slideToBody {
+    0% {
+        transform: scale(1.4);
+        transform-origin: 80% 30%; 
+    }
+    100% {
+        transform: scale(1.4);
+        transform-origin: 40% 60%; 
+    }
+}
+
+/* --- Glass Card Entry Animation --- */
+.animate-card-fade {
+    animation: cardFadeUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    opacity: 0; 
+}
+
+@keyframes cardFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.bg-admin-search-result {
+    background-color: transparent !important;
+    background-image: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+body.bg-admin-search-result::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url('assets/cycle.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    
+    transform: scale(1.4);
+    transform-origin: 40% 60%; 
+}
+
+body.bg-admin-roster {
+    background-color: transparent !important;
+    background-image: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+body.bg-admin-roster::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url('assets/cycle.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    
+    animation: slideToBackWheel 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideToBackWheel {
+    0% {
+        transform: scale(1.4);
+        transform-origin: 40% 60%; 
+    }
+    100% {
+        transform: scale(1.4);
+        transform-origin: 5% 75%; 
+    }
+}
+
+.glass-card label, 
+.glass-card form {
+    color: #ffffff !important;
+}
+
+/* Style input text boxes to match the dark glass aesthetic */
+.glass-card input[type="text"],
+.glass-card input[type="number"],
+.glass-card input:not([type="submit"]):not([type="checkbox"]) {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+}
+
+.glass-card input[readonly] {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #e0e0e0 !important;
+    opacity: 0.8;
+}
+
+.glass-card input[type="submit"] {
+    background: linear-gradient(135deg, #0dcaf0, #00a8cc) !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: bold !important;
+    padding: 12px 25px !important;
+    border-radius: 50px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Button hover animation */
+.glass-card input[type="submit"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.4) !important;
+}
+
+/* The glass card sizing for forms/alerts */
+.form-card {
+    max-width: 600px;
+    padding: 35px !important;
+}
+
+.status-box {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    gap: 15px;
+    font-size: 1.05rem;
+}
+
+.status-box i {
+    font-size: 1.5rem;
+}
+
+/* Green Success State */
+.success-box {
+    background-color: #d1eada; /* Soft mint green */
+    color: #143524; /* Dark green text */
+}
+.success-box i { color: #198754; }
+
+/* Red Warning State */
+.warning-box {
+    background-color: #f8d7da; /* Soft red */
+    color: #58151c; /* Dark red text */
+}
+.warning-box i { color: #dc3545; }
+.warning-box strong { color: #dc3545; font-size: 1.1rem; }
+
+/* Wide Buttons */
+.btn-cyan-wide, .btn-red-wide {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Cyan Glowing Button */
+.btn-cyan-wide {
+    background-color: #0dcaf0;
+    color: #000000; /* Black text on cyan */
+    box-shadow: 0 0 15px rgba(13, 202, 240, 0.5);
+}
+.btn-cyan-wide:hover {
+    background-color: #00b5d8;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(13, 202, 240, 0.7);
+}
+
+/* Red Delete Button */
+.btn-red-wide {
+    background-color: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.3);
+}
+.btn-red-wide:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);
+}
+
+/* Form override to make sure submit button fills width */
+.full-width-form {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Cancel link */
+.cancel-link-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+.link-cancel {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.link-cancel:hover { color: #ffffff; }
+
+body.bg-static,
+body.bg-static::before,
+body.bg-static::after {
+    animation-play-state: paused !important;
+}
+
+.bg-wheel-to-sprocket {
+    background-image: url('assets/cycle.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: panToSprocket 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes panToSprocket {
+    0% {
+        /* START: Focused on the back wheel (bottom left) */
+        background-position: 5% 75%; 
+        background-size: 130%; 
+    }
+    100% {
+        /* END: Focused on the chain sprocket (bottom center) */
+        background-position: 42% 78%; 
+        background-size: 130%; 
+    }
+}
