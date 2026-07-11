@@ -2,8 +2,8 @@
 session_start();
 // Security check: If not logged in, redirect back to login page
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: admin_login.html');
-    exit;
+     header('Location: admin_login.html');
+exit;
 }
 ?>
 <!DOCTYPE html>
@@ -92,5 +92,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
     </main>
 
+    <h1>Cit-E Cycling web portal</h1>
+
+    <?php
+    echo "<p>Welcome, " . htmlspecialchars($_SESSION['username']) . "</p>";
+    ?>
+    <ul>
+        <li><a href="search_form.php">Search for clubs or participants</a></li>
+        <li><a href="view_participants_edit_delete.php">View all participants to either edit or delete</a></li>
+        <li><a href="view_interest.php">View registered interest</a></li>
+        <li><a href="login.php?action=logout">Logout</a></li>
+   
+    </ul> 
 </body>
 </html>
